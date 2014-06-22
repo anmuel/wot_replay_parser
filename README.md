@@ -1,6 +1,13 @@
 # WotReplayParser
 
-TODO: Write a gem description
+Simple gem with an executable to parse metadata from World of Tanks replays and extract them
+with the later goal to visualize them.
+
+future steps may include:
+* various output formats like xml, json, csv, ...
+* database backend to keep own database to be independent on actual replays saved
+* web frontend with direct visualization
+* webservice for multiple users
 
 ## Installation
 
@@ -18,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`ruby bin/wot_replay_parser -h`
 
 ## Contributing
 
