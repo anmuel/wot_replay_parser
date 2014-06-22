@@ -1,0 +1,3 @@
+describe WotReplayParser do
+
+end

@@ -1,0 +1,1 @@
+require File.expand_path(File.join('config', 'i18n_config'))
