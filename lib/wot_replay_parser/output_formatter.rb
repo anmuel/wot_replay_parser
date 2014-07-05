@@ -20,7 +20,7 @@ module WotReplayParser
       end
     end
 
-    def dump_to_csv(output_file)
+    def dump_to_csv(output_file = '')
       output_file ||= ("#{self.output_file}.#{file_extensions[:csv]}")
       CSV.dump(to_csv, output_file)
     end
