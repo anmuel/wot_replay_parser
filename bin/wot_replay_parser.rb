@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
-require 'lib/wot_replay_parser'
+require File.expand_path(File.join('lib', 'wot_replay_parser'))
 
 optparse = OptionParser.new do |opts|
   opts.banner = 'Usage: ruby wot_replay_parser.rb [options]'

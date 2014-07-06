@@ -10,7 +10,8 @@ module WotReplayParser
     end
 
     def to_csv
-      [self.class.csv_header] + replays.map do |replay|
+      headers = [self.class.csv_header]
+      rows = replays.map do |replay|
         [
             replay.time.to_formatted_s,
             replay.tank,
@@ -18,11 +19,17 @@ module WotReplayParser
             replay.country
         ]
       end
+
+      headers + rows
     end
 
     def dump_to_csv(output_file = '')
       output_file ||= ("#{self.output_file}.#{file_extensions[:csv]}")
-      CSV.dump(to_csv, output_file)
+      CSV.open(output_file, 'w+') do |csv|
+        to_csv.each do |line|
+          csv << line
+        end
+      end
     end
 
     def self.possible_output_formats
