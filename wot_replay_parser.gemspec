@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = 'wot_replay_parser'
   spec.version       = WotReplayParser::VERSION
   spec.authors       = ['Andreas Müller']
-  spec.email         = ['andreas.mueller@adytonsystems.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ['anmuel86@googlemail.com']
+  spec.summary       = %q{Parse WoT replay file data}
+  spec.description   = %q{Simple gem with an executable to parse metadata from World of Tanks replays and extract them with the later goal to visualize them.}
   spec.homepage      = ''
   spec.license       = 'MIT'
 
