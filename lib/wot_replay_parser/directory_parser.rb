@@ -11,7 +11,7 @@ module WotReplayParser
     def self.parse(replays_path, file_extension = DEFAULT_FILE_EXTENSION)
       Dir.glob(File.join(replays_path, "**.#{file_extension}")).map do |file|
         WotReplay.new(file)
-      end
+      end.select(&:valid?)
     end
   end
 end

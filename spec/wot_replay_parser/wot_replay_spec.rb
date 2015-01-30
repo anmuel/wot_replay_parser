@@ -8,6 +8,8 @@ describe WotReplayParser::WotReplay do
 
   subject { described_class.new(file_name) }
 
+  it { is_expected.to be_valid }
+
   its(:country) { is_expected.to eq 'Germany' }
   its(:tank) { is_expected.to eq 'Rhm-Borsig Waffenträger' }
   its(:map) { is_expected.to eq 'Hills' }
@@ -34,5 +36,11 @@ describe WotReplayParser::WotReplay do
     its(:day) { is_expected.to eq 22 }
     its(:hour) { is_expected.to eq 00 }
     its(:minute) { is_expected.to eq 21 }
+  end
+
+  describe '#valid?' do
+    it 'is only valid if it can parse the file name correctly' do
+      expect(described_class.new('temp.wotreplay')).to_not be_valid
+    end
   end
 end

@@ -14,6 +14,10 @@ module WotReplayParser
       @plain_meta_data = self.class.parse_meta_data_from_file_name(file)
     end
 
+    def valid?
+      plain_meta_data.present?
+    end
+
     def tank
       translate_plain_data(:tank)
     end
@@ -28,16 +32,17 @@ module WotReplayParser
 
     def time
       DateTime.new(plain_meta_data[:year].to_i,
-      plain_meta_data[:month].to_i,
-      plain_meta_data[:day].to_i,
-      plain_meta_data[:hour].to_i,
-      plain_meta_data[:minute].to_i)
+                   plain_meta_data[:month].to_i,
+                   plain_meta_data[:day].to_i,
+                   plain_meta_data[:hour].to_i,
+                   plain_meta_data[:minute].to_i)
     end
 
     private
     def translate_plain_data(value_name)
       plain_name = plain_meta_data[value_name]
-      I18n.t("#{value_name.to_s.pluralize}.#{plain_name.downcase}")
+      I18n.t("#{value_name.to_s.pluralize}.#{plain_name.downcase}",
+             default: plain_name)
     end
   end
 end
