@@ -27,7 +27,7 @@ Or install it yourself as:
 
 ## Usage
 
-`rake run[<path-to-wot-replay>,<output-csv-file-path>]`
+`rake run[<path-to-wot-replays-folder>,<output-csv-file-path>]`
 
 ## Contributing
 
